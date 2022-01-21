@@ -9,4 +9,10 @@ class ItemsController < ApplicationController
     current_user.items.create!(name: params[:name], genre: params[:genre], image: params[:image])
     redirect_to user_path(current_user)
   end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy!
+    redirect_to user_path(current_user)
+  end
 end
