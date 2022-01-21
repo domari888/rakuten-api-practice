@@ -10,7 +10,7 @@
     <% if @items.present? %>
       <% @items.each do |item| %>
         <tr>
-          <td><%= image_tag item['smallImageUrl'] %></td>
+          <td><%= image_tag item['mediumImageUrl'] %></td>
           <td><%= link_to item['productName'], "#{item['affiliateUrl']}" %></td>
           <td><%= item['genreName'] %></td>
         </tr>
