@@ -1,2 +1,22 @@
 <h1>マイページ</h1>
 <p>メールアドレス : <%= @user.email %></p>
+<table>
+  <thead>
+    <tr>
+      <th>画像</th>
+      <th>商品名</th>
+      <th>ジャンル</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @user.items.present? %>
+      <% @user.items.each do |item| %>
+        <tr>
+          <td><%= image_tag item.image %></td>
+          <td><%= item.name %></td>
+          <td><%= item.genre %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
