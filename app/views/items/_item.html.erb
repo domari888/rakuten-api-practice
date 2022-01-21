@@ -4,6 +4,7 @@
       <th>画像</th>
       <th>商品名</th>
       <th>ジャンル</th>
+      <th>アイテムを追加</th>
     </tr>
   </thead>
   <tbody>
@@ -13,6 +14,7 @@
           <td><%= image_tag item['mediumImageUrl'] %></td>
           <td><%= link_to item['productName'], "#{item['affiliateUrl']}" %></td>
           <td><%= item['genreName'] %></td>
+          <td><%= link_to "＋", items_path(name: item['productName'], genre: item['genreName'], image: item['mediumImageUrl']), method: :post %></td>
         </tr>
       <% end %>
     <% end %>
